@@ -1,6 +1,6 @@
 # The Ivaldi contract
 
-What Ivaldi's design expects of Brokkr. Ivaldi scaffolds Projects; Brokkr deploys their Releases. These notes moved here from `worldtree-industries/ivaldi` `docs/brokkr-notes.md`, which now points to this file.
+What Ivaldi's design expects of Brokkr. Ivaldi scaffolds Projects; Brokkr deploys their Releases. These notes moved here from `worldtree-industries/ivaldi` `docs/brokkr-notes.md`, which has been deleted.
 
 Terms are defined in [`GLOSSARY.md`](../GLOSSARY.md). Ivaldi's own glossary defines Project, Binary, Kind and Tool.
 
