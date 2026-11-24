@@ -1,0 +1,14 @@
+# brokkr
+
+TODO: Describe what this Project does.
+
+## Development
+
+| Command            | What it does                                  |
+| ------------------ | --------------------------------------------- |
+| `make lint`        | Run golangci-lint                             |
+| `make test`        | Run the tests                                 |
+| `make build`       | Build everything, and each binary into `bin/` |
+| `make run-<name>`  | Run the binary in `cmd/<name>`                |
+| `make install`     | `go install` every binary                     |
+| `make setup-hooks` | Turn on the pre-commit hook in a fresh clone  |
