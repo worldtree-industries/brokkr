@@ -42,7 +42,11 @@ _Avoid_: Gateway, ingress
 ### How it's shaped
 
 **Org Default**:
-The value the org applies to a Deployable when its Manifest says nothing.
+The Platform-neutral value, per Kind, that the org applies to a Deployable when its Manifest says nothing.
+
+**Platform Policy**:
+What a Platform always does to every Deployable on a Target, which neither Org Defaults nor Manifest Settings can change.
+_Avoid_: Org Default (an Org Default can be replaced; Platform Policy can't)
 
 **Manifest Setting**:
 A value in a Project's Manifest that replaces an Org Default for one Deployable, stated without reference to any Platform.
