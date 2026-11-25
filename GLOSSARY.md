@@ -36,7 +36,7 @@ One of the fixed stages defined in mjolnir (`dev`, `staging`, `prod`) that a Rel
 _Avoid_: Cluster, stage
 
 **Load Balancer**:
-A named, org-defined entry point that a Deployable can be exposed through. A Manifest may name one, but never says what kind of load balancer it is.
+A named, org-defined entry point that a Deployable can be exposed through. A Manifest names which ones a Deployable is exposed through, but never what kind of load balancer they are.
 _Avoid_: Gateway, ingress
 
 ### How it's shaped
