@@ -49,8 +49,12 @@ A value in a Project's Manifest that replaces an Org Default for one Deployable,
 _Avoid_: Override (Mimir uses that word for config values)
 
 **Deploy**:
-A single push-button action that puts one Release into one Environment.
+A single push-button action that puts one or more Deployables of one Project, each at a chosen Release, into one Environment.
 _Avoid_: Rollout, sync, push
+
+**Rollback**:
+A Deploy that puts a Deployable at an older Release than the one it's at in that Environment.
+_Avoid_: Revert, downgrade
 
 **Desired State**:
 The fully resolved record in git of what runs on each Target, written in its Platform's native format so that the Platform's own tools can apply it without Brokkr.
@@ -59,7 +63,7 @@ _Avoid_: Deploy repo, manifests (Manifest means `.forge.yaml`)
 ### Brokkr's parts
 
 **Control Plane**:
-The part of Brokkr that owns the Deploy button: it resolves a Release with its Org Defaults and Manifest Settings and commits the result to the Desired State.
+The part of Brokkr that carries out Deploys: it resolves each Deployable at its Release with its Org Defaults and Manifest Settings and commits the result to the Desired State.
 _Avoid_: Server, brokkr core
 
 **Agent**:
