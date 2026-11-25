@@ -18,7 +18,7 @@ The `.forge.yaml` file in a Project: its Binaries, their Kinds, and their Manife
 _Avoid_: Config, spec
 
 **Release**:
-A Project at a `vX.Y.Z` git tag, pinning one image per Deployable: the one built for the most recent Release, at or before this one, that changed that Deployable.
+A `vX.Y.Z` git tag of a Project at which one of its Deployables changed, together with the image built for that Deployable at that tag and published to the registry. Each Deployable has its own Releases: a tag that didn't change a Deployable is not one of its Releases.
 _Avoid_: Version, build, image tag
 
 ### Where it runs
