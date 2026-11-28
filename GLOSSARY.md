@@ -36,13 +36,17 @@ One of the fixed stages defined in mjolnir (`dev`, `staging`, `prod`) that a Rel
 _Avoid_: Cluster, stage
 
 **Load Balancer**:
-A named, org-defined entry point that a Deployable can be exposed through. A Manifest may name one, but never says what kind of load balancer it is.
+A named, org-defined entry point that a Deployable can be exposed through. A Manifest names which ones a Deployable is exposed through, but never what kind of load balancer they are.
 _Avoid_: Gateway, ingress
 
 ### How it's shaped
 
 **Org Default**:
-The value the org applies to a Deployable when its Manifest says nothing.
+The Platform-neutral value, per Kind, that the org applies to a Deployable when its Manifest says nothing.
+
+**Platform Policy**:
+What a Platform always does to every Deployable on a Target, which neither Org Defaults nor Manifest Settings can change.
+_Avoid_: Org Default (an Org Default can be replaced; Platform Policy can't)
 
 **Manifest Setting**:
 A value in a Project's Manifest that replaces an Org Default for one Deployable, stated without reference to any Platform.
@@ -66,6 +70,14 @@ _Avoid_: Deploy repo, manifests (Manifest means `.forge.yaml`)
 The part of Brokkr that carries out Deploys: it resolves each Deployable at its Release with its Org Defaults and Manifest Settings and commits the result to the Desired State.
 _Avoid_: Server, brokkr core
 
+**Renderer**:
+The part of the Control Plane that turns a fully resolved Deployable into Desired State for one Platform.
+_Avoid_: Generator, templater
+
 **Agent**:
 The part of Brokkr that runs on one Target and continuously makes it match that Target's Desired State.
 _Avoid_: Reconciler, operator, controller
+
+**Applier**:
+The part of an Agent that makes one Target match its Desired State, for one Platform.
+_Avoid_: Syncer, deployer
