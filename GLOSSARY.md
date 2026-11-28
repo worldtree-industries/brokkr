@@ -70,6 +70,14 @@ _Avoid_: Deploy repo, manifests (Manifest means `.forge.yaml`)
 The part of Brokkr that carries out Deploys: it resolves each Deployable at its Release with its Org Defaults and Manifest Settings and commits the result to the Desired State.
 _Avoid_: Server, brokkr core
 
+**Renderer**:
+The part of the Control Plane that turns a fully resolved Deployable into Desired State for one Platform.
+_Avoid_: Generator, templater
+
 **Agent**:
 The part of Brokkr that runs on one Target and continuously makes it match that Target's Desired State.
 _Avoid_: Reconciler, operator, controller
+
+**Applier**:
+The part of an Agent that makes one Target match its Desired State, for one Platform.
+_Avoid_: Syncer, deployer
